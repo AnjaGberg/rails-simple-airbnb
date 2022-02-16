@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="header">
+    <h1> <%= @flat.name %> </h1>
+    <p> <%= @flat.address %> </p>
+  </div>
+  <div class="info">
+    <h2>A bit more about this flat</h2>
+    <p> <%= @flat.description %> </p>
+  </div>
+  <div class="details">
+    <h2>Details</h2>
+    <div class="flex">
+      <div class="flex">Max Guests: <%= @flat.number_of_guests %></div>
+      <div class="flex">Price per Night: € <%= @flat.price_per_night %></div>
+    </div>
+  </div>
+
+</div>

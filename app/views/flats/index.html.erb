@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Flats (<%= @flats.count %>)</h1>
+    </div>
+  </div>
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-md-4">
+        <div class="card">
+          <h3><%= flat.name %></h3>
+          <p><%= flat.description.truncate(100, separator: ' ') %></p>
+          <div class="flex">
+            <div class="flex">Max Guests: <%= flat.number_of_guests %></div>
+            <div class="flex">Price per Night: € <%= flat.price_per_night %></div>
+          </div>
+          <div class="btn"> <%= link_to 'More Info', flat_path(flat) %></div>
+          <div class="btn"> <%= link_to 'Delete', flat_path(flat), method: :delete, data: {confirm: "Are you sure?"} %> </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
